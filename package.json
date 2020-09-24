@@ -2,15 +2,16 @@
   "private": true,
   "name": "example-monorepo",
   "workspaces": [
-    "app-container",
-    "micro-frontend"
+    "packages/*"
   ],
   "scripts": {
-    "app-container": "yarn workspace app-container start",
-    "micro-frontend": "yarn workspace micro-frontend start",
+    "app-container": "yarn workspace @poc-micro-service/app-container start",
+    "micro-frontend": "yarn workspace @poc-micro-service/micro-frontend start",
     "start": "concurrently --kill-others-on-fail \"yarn app-container\"  \"yarn micro-frontend\""
   },
   "dependencies": {
     "concurrently": "^5.3.0"
+  },
+  "devDependencies": {
   }
 }
