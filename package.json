@@ -7,11 +7,15 @@
   "scripts": {
     "app-container": "yarn workspace @poc-micro-service/app-container start",
     "micro-frontend": "yarn workspace @poc-micro-service/micro-frontend start",
-    "start": "concurrently --kill-others-on-fail \"yarn app-container\"  \"yarn micro-frontend\""
+    "app-container-test": "yarn workspace @poc-micro-service/app-container test",
+    "micro-frontend-test": "yarn workspace @poc-micro-service/micro-frontend test",
+    "start": "concurrently --kill-others-on-fail \"yarn app-container\"  \"yarn micro-frontend\"",
+    "test": "concurrently \"yarn app-container-test\" \"yarn micro-frontend-teste\""
   },
   "dependencies": {
     "concurrently": "^5.3.0"
   },
   "devDependencies": {
+    "lerna": "^3.22.1"
   }
 }
