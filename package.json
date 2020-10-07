@@ -5,7 +5,6 @@
     "packages/*"
   ],
   "scripts": {
-    "app-container": "yarn workspace @poc-micro-service/app-container start",
     "micro-frontend": "yarn workspace @poc-micro-service/micro-frontend start",
     "app-container-test": "yarn workspace @poc-micro-service/app-container test",
     "micro-frontend-test": "yarn workspace @poc-micro-service/micro-frontend test",
