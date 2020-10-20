@@ -9,6 +9,7 @@ pipeline {
             steps {
                 echo 'building application...'
                 echo "building version ${NEW_VERSION}"
+                sh 'git submodules update'
                 sh 'npm run test'
             }
         }
