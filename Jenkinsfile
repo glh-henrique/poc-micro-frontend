@@ -2,21 +2,21 @@ pipeline {
     agent any
     tools {nodejs 'nodeJs'}
     stages {
-        stage("build") {
+        stage("test") {
             steps {
-                echo 'building application...'
+                echo 'testing application...'
                 sh 'rm -rf node_modules'
                 sh 'git pull origin master'
                 sh 'git submodule foreach git pull origin master'
                 sh 'npm install'
-                sh 'lerna boostrap'
+                sh 'lerna run test'
             }
         }
 
-        stage("test") {
+        stage("build") {
             steps {
-                echo 'testing application...'
-                sh 'lerna run test'
+                echo 'building application...'
+                sh 'yarn workspaces run build'
             }
         }
 
