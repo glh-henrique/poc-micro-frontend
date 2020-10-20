@@ -9,7 +9,7 @@ pipeline {
                 sh 'git pull origin master'
                 sh 'git submodule update --recursive --init --remote'
                 sh 'npm install'
-                sh 'yarn workspaces run test'
+                sh 'yarn workspaces run test --watchAll'
             }
         }
 
