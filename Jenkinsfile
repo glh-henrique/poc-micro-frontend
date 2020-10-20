@@ -8,6 +8,7 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'git pull origin master'
                 sh 'git submodule foreach git pull origin master'
+                sh 'npm install'
                 sh 'lerna boostrap'
             }
         }
