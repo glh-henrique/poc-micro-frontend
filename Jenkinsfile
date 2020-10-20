@@ -7,15 +7,15 @@ pipeline {
                 echo 'building application...'
                 sh 'rm -rf node_modules'
                 sh 'git pull origin master'
-                sh 'git submodule update --recursive --init --remote'
-                sh 'npm install'
-                sh 'yarn workspaces run test --watchAll'
+                sh 'git submodule foreach git pull origin master'
+                sh 'lerna boostrap'
             }
         }
 
         stage("test") {
             steps {
                 echo 'testing application...'
+                sh 'lerna run test'
             }
         }
 
