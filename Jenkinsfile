@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'building application...'
                 echo "building version ${NEW_VERSION}"
-                sh 'npm -v'
+                sh 'npm run test'
             }
         }
 
