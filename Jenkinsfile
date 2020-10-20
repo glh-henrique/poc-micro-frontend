@@ -1,15 +1,14 @@
 pipeline {
     agent any
     environment {
-        NEW_VERSION = '1.3.0'
     }
     tools {nodejs 'nodeJs'}
     stages {
         stage("build") {
             steps {
                 echo 'building application...'
-                echo "building version ${NEW_VERSION}"
-                sh 'git submodule update --force --recursive --init --remote'
+                sh 'git pull origin master'
+                sh 'git submodule update --recursive --init --remote'
                 sh 'npm run test'
             }
         }
