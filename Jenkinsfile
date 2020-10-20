@@ -7,7 +7,8 @@ pipeline {
                 echo 'building application...'
                 sh 'git pull origin master'
                 sh 'git submodule update --recursive --init --remote'
-                sh 'npm run test'
+                sh 'npm install'
+                sh 'yarn run test'
             }
         }
 
