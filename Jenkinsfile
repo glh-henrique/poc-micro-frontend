@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'building application...'
                 echo "building version ${NEW_VERSION}"
-                sh 'git submodule update --init'
+                sh 'git submodule foreach git pull origin master'
                 sh 'npm run test'
             }
         }
