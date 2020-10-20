@@ -17,6 +17,7 @@
     "react-app-rewired": "2.1.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
     "lerna": "^3.22.1"
   }
 }
