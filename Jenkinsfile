@@ -5,17 +5,17 @@ pipeline {
         stage("install packages") {
             steps {
                 echo 'install packages...'
+                sh 'npm install --g lerna'
                 sh 'rm -rf node_modules'
                 sh 'git pull origin master'
                 sh 'git submodule foreach git pull origin master'
                 sh 'npm install'
-                sh 'npm install --g lerna'
             }
         }
         stage("test") {
             steps {
                 echo 'testing application...'
-                sh 'lerna run test'
+                sh 'lerna run test --stream'
             }
         }
 
