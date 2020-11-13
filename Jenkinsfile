@@ -22,6 +22,7 @@ pipeline {
         stage("build") {
             steps {
                 echo 'building application...'
+                sh 'pwd'
                 sh 'yarn workspaces run build'
             }
         }
