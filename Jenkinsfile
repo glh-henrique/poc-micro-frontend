@@ -1,3 +1,4 @@
+#!/bin/groovy
 pipeline {
     agent any
     tools {nodejs 'nodeJs'}
@@ -9,13 +10,12 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'git pull origin master'
                 sh 'git submodule foreach git pull origin master'
-                sh 'npm install'
+                sh 'lerna bootstrap'
             }
         }
         stage("test") {
             steps {
                 echo 'testing application...'
-                sh 'lerna run test --stream'
             }
         }
 
