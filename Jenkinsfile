@@ -13,9 +13,11 @@ pipeline {
                 sh 'lerna bootstrap'
             }
         }
+
         stage("test") {
             steps {
                 echo 'testing application...'
+                echo 'pesquisar sobre teste sem interface'
             }
         }
 
@@ -27,9 +29,10 @@ pipeline {
             }
         }
 
-        stage("deploy") {
+        stage("deploy app1") {
             steps {
                 echo 'deployng application...'
+                sh 'docker cp /var/jenkins_home/workspace/ci-teste_master/packages/poc-micro-frontend-app1/build stoic_johnson:/usr/share/nginx/html/'
             }
         }
     }
