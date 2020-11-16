@@ -32,7 +32,7 @@ pipeline {
         stage("deploy app1") {
             steps {
                 echo 'deployng application...'
-                sh 'docker cp /var/jenkins_home/workspace/ci-teste_master/packages/poc-micro-frontend-app1/build stoic_johnson:/usr/share/nginx/html/'
+                sh 'docker cp /var/jenkins_home/workspace/ci-teste_master/packages/poc-micro-frontend-app1/build c7a2f1d18bb1:/usr/share/nginx/html'
             }
         }
     }
