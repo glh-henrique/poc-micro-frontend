@@ -1,6 +1,7 @@
 #!/bin/groovy
 node {
-    stage("install packages") {
+    stages {
+        stage("install packages") {
             steps {
                 echo 'install packages...'
                 sh 'npm install --g lerna'
@@ -32,4 +33,5 @@ node {
                 sh 'docker cp /var/jenkins_home/workspace/ci-teste_master/packages/poc-micro-frontend-app1/build c7a2f1d18bb1:/usr/share/nginx/html'
             }
         }
+    }
 }
