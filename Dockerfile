@@ -18,8 +18,8 @@ COPY packages/poc-micro-frontend-app1 ./packages/poc-micro-frontend-app1
 COPY packages/poc-micro-frontend-app2 ./packages/poc-micro-frontend-app2
 
 #prepare the container for building application
-RUN yarn install --silent
-RUN yarn workspaces foreach run build
+#RUN yarn install --silent
+RUN lerna run build --stream
 
 #prepare Nginx
 FROM nginx:alpine
