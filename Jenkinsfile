@@ -5,7 +5,6 @@ pipeline {
         nodejs 'nodeJs'
     }
     stages {
-        agent { label 'docker'}
         stage("Checkout") {
             steps {
                 checkout scm
@@ -19,6 +18,7 @@ pipeline {
             }
         }
         stage("install packages") {
+            agent { label 'docker'}
             steps {
                 echo 'install packages...'
                 sh 'docker build -t acme/app1 -f Dockerfile .'
