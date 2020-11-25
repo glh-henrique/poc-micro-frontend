@@ -1,7 +1,11 @@
 #!/bin/groovy
 pipeline {
-    agent any
-    tools {nodejs 'nodeJs'}
+    agent {
+        label 'docker'
+    }
+    tools {
+        nodejs 'nodeJs'
+    }
     stages {
         stage("Checkout") {
             steps {
