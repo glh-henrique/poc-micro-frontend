@@ -3,10 +3,10 @@ pipeline {
     agent any
     tools {nodejs 'nodeJs'}
     stages {
-        stage('Checkout') {
+        stage("Checkout") {
           checkout scm
         }
-        stage('Environment') {
+        stage("Environment") {
           sh 'git --version'
           echo "Branch: ${env.BRANCH_NAME}"
           sh 'docker -v'
