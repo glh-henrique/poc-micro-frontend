@@ -18,9 +18,9 @@ pipeline {
             }
         }
         stage("install packages") {
-            agent { label 'docker'}
             steps {
                 echo 'install packages...'
+                sh 'npm install -g docker'
                 sh 'docker build -t acme/app1 -f Dockerfile .'
                 //sh 'npm install --g yarn'
                 //sh 'npm install --g lerna'
