@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/caches/git-029bfd611c01e7778e31b5a9d4a5d925" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/reac-app_master" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/reac-app_master@2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/poc-micro-frontend-app1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/poc-micro-frontend-app2" vcs="Git" />
   </component>

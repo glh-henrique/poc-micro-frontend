@@ -2,5 +2,14 @@ instalar versão lts do jenkins setando caminho de store caso precise fazer upda
 
  - docker run -p 8080:8080 -v D:\Develop\poc-micro-service/jenkins:/jenkins_home jenkins/jenkins:lts
 
-Exclusivo pra mim
- - instalar plugin locale 
+ Seguir:
+
+Levantar registry e jenkins que estaram configurados no docker-compose
+ - docker-compose up -d
+
+    *Exclusivo pra mim
+     - instalar plugin locale
+     - set linguage en_US
+
+ - instalar plugin node
+    - configurar para pegar  a ultima versão sempre
