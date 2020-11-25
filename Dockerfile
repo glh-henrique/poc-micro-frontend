@@ -5,9 +5,9 @@ WORKDIR /app
 
 #Update unix and install global dependences
 RUN \
-    npm install -g yarn && \
-    npm i lerna -g --loglevel notice && \
-    npm install -g react-scripts && \
+    npm install -g yarn --force && \
+    npm i lerna -g --loglevel --force notice && \
+    npm install -g react-scripts --force && \
     rm -rf /var/lib/apt/lists/*
 
 #copy package min aplication
