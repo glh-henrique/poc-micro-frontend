@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo 'install packages...'
                 sh 'ls -lha'
+                sh 'sudo chmod 777 /var/run/docker.sock'
                 sh 'docker build -t acme/app1 -f Dockerfile .'
                 //sh 'npm install --g yarn'
                 //sh 'npm install --g lerna'
