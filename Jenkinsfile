@@ -18,6 +18,7 @@ pipeline {
         stage("install packages") {
             steps {
                 echo 'install packages...'
+                sh 'docker build -t acme/app1 -f Dockerfile .'
                 //sh 'npm install --g yarn'
                 //sh 'npm install --g lerna'
                 //sh 'rm -rf node_modules'
