@@ -1,0 +1,6 @@
+instalar versão lts do jenkins setando caminho de store caso precise fazer update ou restar do contaniner
+
+ - docker run -p 8080:8080 -v D:\Develop\poc-micro-service/jenkins:/jenkins_home jenkins/jenkins:lts
+
+Exclusivo pra mim
+ - instalar plugin locale 
