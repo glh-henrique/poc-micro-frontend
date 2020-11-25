@@ -1,7 +1,13 @@
 #!/bin/groovy
 pipeline {
     agent any
-    tools {nodejs 'nodeJs'}
+    tools {
+        nodejs 'nodeJs'
+    }
+    stage('Initialize'){
+        def dockerHome = tool 'docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
     stages {
         stage("Checkout") {
             steps {
