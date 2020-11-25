@@ -12,6 +12,7 @@ RUN \
 
 #copy package min aplication
 COPY package.json .
+COPY lerna.json .
 
 #copy the applications to the container
 COPY packages/poc-micro-frontend-app1 ./packages/poc-micro-frontend-app1
