@@ -5,12 +5,7 @@ pipeline {
         nodejs 'nodeJs'
     }
     stages {
-        stage("Initialize") {
-            steps {
-                def dockerHome = tool 'docker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
+        agent { label 'docker'}
         stage("Checkout") {
             steps {
                 checkout scm
