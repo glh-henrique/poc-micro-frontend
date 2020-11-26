@@ -5,9 +5,9 @@ WORKDIR /app
 
 #Update unix and install global dependences
 RUN \
-    npm install -g yarn --force && \
-    npm i lerna -g --loglevel --force notice && \
-    npm install -g react-scripts --force && \
+    npm install -g yarn && \
+    npm i lerna -g --loglevel notice && \
+    npm install -g react-scripts && \
     rm -rf /var/lib/apt/lists/*
 
 #copy package min aplication
@@ -19,7 +19,7 @@ COPY packages/poc-micro-frontend-app1 ./packages/poc-micro-frontend-app1
 COPY packages/poc-micro-frontend-app2 ./packages/poc-micro-frontend-app2
 
 #prepare the container for building application
-#RUN yarn install --silent
+RUN yarn install --silent
 RUN lerna run build --stream
 
 #prepare Nginx
