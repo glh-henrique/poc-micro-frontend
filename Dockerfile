@@ -4,7 +4,7 @@ FROM node:alpine as build
 WORKDIR /app
 
 #Update unix and install global dependences
-RUN npm list -g yarn || npm install -g yarn;
+RUN npm install -g yarn; exit 0;
 RUN npm i lerna -g --loglevel notice; exit 0;
 RUN npm install -g react-scripts; exit 0;
 RUN rm -rf /var/lib/apt/lists/*
