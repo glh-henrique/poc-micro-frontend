@@ -34,5 +34,3 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 EXPOSE 80
 
 CMD ["nginx","-g","daemon off"]
-
-rmdir -r reac-app_master@2
