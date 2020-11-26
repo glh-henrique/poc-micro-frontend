@@ -5,7 +5,7 @@ WORKDIR /app
 
 #Update unix and install global dependences
 RUN yarn -v || npm install -g yarn;
-RUN npm i lerna -g --loglevel notice;
+RUN lerna -v || npm i lerna -g --loglevel notice;
 RUN npm install -g react-scripts;
 RUN rm -rf /var/lib/apt/lists/*
 
@@ -14,7 +14,7 @@ COPY package.json .
 COPY lerna.json .
 
 #copy the applications to the container
-COPY packages/poc-micro-frontend-app1 ./packages/poc-micro-frontend-app1
+#COPY packages/poc-micro-frontend-app1 ./packages/poc-micro-frontend-app1
 #COPY packages/poc-micro-frontend-app2 ./packages/poc-micro-frontend-app2
 
 #prepare the container for building application
@@ -34,3 +34,5 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 EXPOSE 80
 
 CMD ["nginx","-g","daemon off"]
+
+rmdir -r reac-app_master@2
