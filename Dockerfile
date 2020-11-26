@@ -4,11 +4,10 @@ FROM node:alpine as build
 WORKDIR /app
 
 #Update unix and install global dependences
-RUN \
-    npm install -g yarn && \
-    npm i lerna -g --loglevel notice && \
-    npm install -g react-scripts && \
-    rm -rf /var/lib/apt/lists/*
+RUN npm list yarn || npm install -g yarn;
+RUN npm i lerna -g --loglevel notice; exit 0;
+RUN npm install -g react-scripts; exit 0;
+RUN rm -rf /var/lib/apt/lists/*
 
 #copy package min aplication
 COPY package.json .
